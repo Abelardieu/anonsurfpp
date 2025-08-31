@@ -35,7 +35,9 @@ sudo python3 anonsurfpp.py status
 # 6) Restore everything
 sudo python3 anonsurfpp.py stop
 
-**If you like this project and want to support future development:**
+## Support This Project
+If you find this tool useful and want to support its development, consider buying me a coffee:
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="abelardieu" data-color="#FFDD00" data-emoji="☕"  data-font="Comic" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=&slug=Abelardieu&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/Abelardieu)
+
 
