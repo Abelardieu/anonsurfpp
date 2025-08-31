@@ -29,6 +29,13 @@ Includes an installer for Tor and `macchanger` on common Linux distributions.
 
 ---
 
+## Support This Project
+If you find this tool useful and want to support its development, consider buying me a coffee:
+
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&slug=abelardieu&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/abelardieu)
+
+---
+
 ## Quick Usage
 
 ```bash
@@ -52,10 +59,8 @@ sudo python3 anonsurfpp.py stop
 
 ---
 
-## Support This Project
-If you find this tool useful and want to support its development, consider buying me a coffee:
 
-[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&slug=abelardieu&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/abelardieu)
+
 
 
 
