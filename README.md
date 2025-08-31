@@ -1,38 +1,41 @@
-# AnonSurf++ (by Abelardieu)
-Enruta TODO el tráfico del host por Tor (modo transparente) o por un SOCKS5 definido, endurece DNS para evitar fugas, y rota MAC/IP de forma opcional. Incluye instalador de Tor y `macchanger` en distros comunes.
+# AnonSurf++
+Routes all host traffic through Tor (transparent mode) or a defined SOCKS5 proxy, hardens DNS to prevent leaks, and optionally rotates MAC/IP. Includes an installer for Tor and `macchanger` on common Linux distributions.
 
-> **Estado:** MVP educativo. Úsalo en laboratorio / VM y bajo tu responsabilidad.
+## Features
+- **Transparent mode**: redirects TCP/DNS traffic to Tor (`TransPort 9040`, `DNSPort 5353`).
+- **SOCKS-only mode**: exports `http_proxy/https_proxy/all_proxy` without touching iptables.
+- **Installer**: detects `apt`, `dnf` or `pacman` and installs Tor + macchanger.
+- **DNS hardening**: `resolv.conf` -> `127.0.0.1` (Tor DNS). Automatic backup and restore.
+- **MAC randomizer**: changes the interface MAC per session and restores it on exit.
+- **Tor identity rotation** with `NEWNYM` (via `stem`).
+- Backups and **clean restore** of iptables rules and `resolv.conf`.
 
-## Características
-- Modo **transparente**: redirige TCP/DNS a Tor (`TransPort 9040`, `DNSPort 5353`).
-- Modo **SOCKS-only**: exporta `http_proxy/https_proxy/all_proxy` sin tocar iptables.
-- **Instalador**: detecta `apt`, `dnf` o `pacman` e instala Tor + macchanger.
-- **Hardening DNS**: `resolv.conf` -> `127.0.0.1` (Tor DNS). Backup y restore automáticos.
-- **MAC randomizer**: cambia MAC de la interfaz por sesión y restaura al salir.
-- **Rotación de identidad Tor** con `NEWNYM` (vía `stem`).
-- Backups y **restore limpio** de reglas iptables e `resolv.conf`.
+## Requirements
+- Linux, **root** privileges.
+- System packages: `tor`, `macchanger`, `iptables` (or iptables-legacy), `systemd`.
+- Python 3.8+ and `pip install -r requirements.txt`.
 
-## Requisitos
-- Linux, privilegios de **root**.
-- Paquetes del sistema: `tor`, `macchanger`, `iptables` (o iptables-legacy), `systemd`.
-- Python 3.8+ y `pip install -r requirements.txt`.
-
-## Uso rápido
+## Quick Usage
 ```bash
-# 1) Instalar dependencias del SO (opcional)
+# 1) Install system dependencies (optional)
 sudo python3 anonsurfpp.py install
 
-# 2) Arrancar modo transparente
+# 2) Start transparent mode
 sudo python3 anonsurfpp.py start --iface eth0
 
-# 3) Sólo proxies SOCKS5
+# 3) SOCKS5 proxy only
 sudo python3 anonsurfpp.py socks --host 127.0.0.1 --port 9050
 
-# 4) Rotar identidad
+# 4) Rotate Tor identity
 sudo python3 anonsurfpp.py rotate
 
-# 5) Ver estado
+# 5) Check status
 sudo python3 anonsurfpp.py status
 
-# 6) Restaurar todo
+# 6) Restore everything
 sudo python3 anonsurfpp.py stop
+
+**If you like this project and want to support future development:**
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="abelardieu" data-color="#FFDD00" data-emoji="☕"  data-font="Comic" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
